@@ -30,9 +30,14 @@ Able to...
 
 Questions
 
-1. Which customers have matching orders?  
-2. Which customers do not have any orders?  
-3. Which orders do not match any existing customers?  
+1. Which customers have matching orders?
+    The customers Alice and Bob have matching orders.
+
+2. Which customers do not have any orders?
+    The customers Carol and David do not have any orders.
+
+3. Which orders do not match any existing customers?
+    The orders o5 and o6 do not have any existing customers.
 
 ---
 
