@@ -60,11 +60,22 @@ Result
 Questions
 
 1. Which customers are not included in the result?
+    The customers Carol and David are not included in the result.
+
 2. Why do you think they are not in the result?
+    As these two do not have an existing orders, we do not see them in the result.
+
 3. Which orders are not included in the result?
+    The orders o5 and o6 are not included in the result.
+
 4. Why do you think they are not in the result?
+    As these two do not have an existing customers, we do not see them in the result.
+
 5. When is a row from Customers or Orders included?
+    When the row has an order and an existing customer with matching customer_id then it is shown.
+
 6. What is the meaning of INNER JOIN?
+    When the join has a row with matching condition and has filled all columns.
 
 ---
 
