@@ -100,9 +100,16 @@ Result
 Questions
 
 1. Which customers are not included in the result?
+    There are no customers left from the result.
+
 2. Which orders are not included in the result?
+    Orders 05 and 06 are left from the ressult.
+
 3. When is a row included?
+    A row iss included if it is a row of the customer table.
+
 4. What is the meaning of LEFT OUTER JOIN?
+    It returns all rows from the lefthand-side table and all rows that are matching from the righthand-side table in the matching condition.
 
 ---
 
@@ -128,9 +135,17 @@ Result
 Questions
 
 1. Which customers are not included in the result?
+    Customers Carol and David are missing from the result.
+
 2. Which orders are not included in the result?
+    All orders are inculded in the result.
+
 3. When is a row included?
+    A row is included if it is a row in the orders table.
+
 4. What is the meaning of RIGHT OUTER JOIN?
+    It returns all rows from the righthand-side table and all rows that are matching from the lefthand-side table in the matching condition.
+
 
 ---
 
