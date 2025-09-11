@@ -172,10 +172,16 @@ Result
 Questions
 
 1. Which customers are not included in the result?
-2. Which orders are not included in the result?
-3. When is a row included?
-4. What is the meaning of FULL JOIN?
+     All customers are inculded in the result.
 
+2. Which orders are not included in the result?
+     All orders are inculded in the result.
+
+3. When is a row included?
+    All rows of both the tables are included.
+
+4. What is the meaning of FULL JOIN?
+    It returns all rows from both tables and when a row from one table has no match in the other, the missing side is filled with NULL.
 ---
 
 ## Model 6
