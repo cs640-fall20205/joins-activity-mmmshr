@@ -188,6 +188,31 @@ Questions
 
 Confirm the above by creating the tables in Postgres and running the queries. Paste the SQL for creating and populating the tables below.
 
-```sql
+```
+CREATE TABLE Customers (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(50)
+);
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT
+    -- no foreign key, so we can insert orders with non-existing customers
+);
+
+-- Customers
+INSERT INTO Customers (customer_id, customer_name) VALUES
+(1, 'Alice'),
+(2, 'Bob'),
+(3, 'Carol'),
+(4, 'David');
+
+-- Orders
+INSERT INTO Orders (order_id, customer_id) VALUES
+(1, 1),
+(2, 2),
+(5, 5),
+(6, 6);
+
 
 ```
