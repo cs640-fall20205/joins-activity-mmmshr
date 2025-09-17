@@ -17,7 +17,7 @@ Complete the following (part of which is from the Day 1 Homework from the text)
 1. (1 pt)
 
     ```
-    Replace this with your answer
+    https://www.postgresql.org/docs/current/
     ```
 
 2. (No answer required)
@@ -25,7 +25,11 @@ Complete the following (part of which is from the Day 1 Homework from the text)
 1. (1 pt)
 
     ```
-    Replace this with your answer
+    There are three types of MATCH that are simple, FULL, PARTIAL as defined by there names simple is when match is simply used without any extra parameters(as in the default form).
+
+    Under FULL, a referencing row escapes the constraint only if all foreign key columns are NULL. Otherwise, mixing NULL and non-NULL causes a failure.
+
+    Under PARTIAL, which is referenced but not implemented mixing NULL and non-NULL will not cause a failure.
     ```
 
 **Do**
