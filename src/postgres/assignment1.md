@@ -37,31 +37,64 @@ Complete the following (part of which is from the Day 1 Homework from the text)
 4. (2 pts) Select all the tables that you created from pg_class and examine the tables to identify the types of metadata Postgres stores about the tables. Explain below:
 
     ```
-    Replace this with your answer
+    SELECT relname, relkind, reltuples, relpages, relchecks
+    FROM pg_class
+    WHERE relkind = 'r'   -- 'r' means ordinary table
+    AND relname NOT LIKE 'pg_%'
+    AND relname NOT LIKE 'sql_%';
+
+    here
+    relname -> table name,
+    relkind → object type (e.g., r for table, i for index, v for view)
+    reltuples → estimated number of rows
+    relpages → estimated number of disk pages
+    relhaspkey → whether a primary key exists
+    relchecks → number of check constraints
     ```
 
 5. (1 pt) Write a query that finds the country name of the Fight Club event.
 
     ```
-    Replace this with your answer
+    SELECT c.country_name
+    FROM events e
+    JOIN venues v ON e.venue_id = v.venue_id
+    JOIN countries c ON v.country_code = c.country_code
+    WHERE e.title = 'Fight Club';
     ```
 
 3. (1 pt) Add a city in the U.S. for Springfield with a zip of 01119. Show the query below:
 
     ```
-    Replace this with your answer
+    INSERT INTO cities (name, postal_code, country_code)
+    VALUES ('Springfield', '01119', (SELECT country_code FROM countries WHERE country_name = 'United States'));
+
     ```
 
 4. (1 pt) Add a private venue in the U.S. for Rivers Hall with address 1215 Wilbraham Rd, Springfield, MA , zipcode 01119.
 
     ```
-    Replace this with your answer
+    INSERT INTO venues (venue_id, name, street_address, postal_code, country_code,  type)
+    VALUES (
+        3,
+        'Rivers Hall',
+        '1215 Wilbraham Rd, Springfield, MA',
+        '01119',
+        (SELECT country_code FROM cities WHERE name = 'Springfield' AND postal_code = '01119'),
+        'private'
+    );
     ```
 
 5. (1 pt) Add an event called ‘New Student Welcome’ that starts at 3:30 PM on August 22nd and ends at 5:00 PM on August 22nd that is held in Rivers Hall.
 
     ```
-    Replace this with your answer
+    INSERT INTO events (event_id, title, starts, ends, venue_id)
+    VALUES (4,
+        'New Student Welcome',
+        '2025-08-22 15:30:00',
+        '2025-08-22 17:00:00',
+        (SELECT venue_id FROM venues WHERE name = 'Rivers Hall')
+    );
+
     ```
 
 6. (1 pt) Alter the events table with a boolean value called “adult” that is true if the event is for adults only and false otherwise.
