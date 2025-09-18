@@ -136,15 +136,21 @@ Read Chapter 2 Wrap-up and then
 
 12. (2 pts) List the strengths of Postgres and relational databases.
 
-    * (first strength)
-    * (second strength)
-    *
+    * Proven and reliable – Backed by decades of research and real-world use, it’s trusted across nearly every field of computing.
+
+    * Strong schema & consistency – Perfect for structured, consistent “Stepford data,” with robust constraints that keep data clean and reliable.
+
+    * Extensible and customizable – Lets you define custom data types, indexes, and even new query languages, giving developers freedom to tailor it to their needs.
+
+    * Truly open source – No tricky licenses or corporate lock-in; it’s community-driven, free to use, and free to extend.
+
 
 13. (2 pts) List of Postgres' weaknesses.
 
-    *
-    *
-    *
+    * Scaling across multiple machines is tricky – PostgreSQL is great on a single server or cluster, but if you need to “scale out” across many servers, it’s not the easiest choice.
+
+    * Not ideal for lightweight or high-volume key-value workloads – If you just need a simple cache, super-fast reads/writes, or only want to store large blobs of data, other databases (like Redis or specialized storage systems) might be better.
+
 
 ## Submission
 
