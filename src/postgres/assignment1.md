@@ -100,19 +100,34 @@ Complete the following (part of which is from the Day 1 Homework from the text)
 6. (1 pt) Alter the events table with a boolean value called “adult” that is true if the event is for adults only and false otherwise.
 
     ```
-    Replace this with your answer
+    ALTER TABLE events
+    ADD COLUMN adult BOOLEAN DEFAULT FALSE;
+
     ```
 
 7. (1 pt) Add an event titled “cooking class” that is adult only to be held in the Crystal Ballroom. List the query here:
 
     ```
-    Replace this with your answer
+    INSERT INTO events (event_id, title, starts, ends, venue_id, adult)
+    VALUES (
+    5,
+    'cooking class',
+    NOW(),         -- placeholder start
+    NOW() + INTERVAL '2 hours',  -- placeholder end
+    (SELECT venue_id FROM venues WHERE name = 'Crystal Ballroom'),
+    TRUE
+    );
+
     ```
 
 8. (1 pt) Write a query that shows the cities, event title and venue name for all events with a venue:
 
     ```
-    Replace this with your answer
+    SELECT ci.name as city_name, e.title AS event_title, v.name as venue_name
+    FROM events e
+    JOIN venues v ON e.venue_id = v.venue_id
+    JOIN cities ci ON v.postal_code = ci.postal_code;
+
     ```
 
 ## Part 3
